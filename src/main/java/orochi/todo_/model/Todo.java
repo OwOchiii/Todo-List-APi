@@ -1,9 +1,6 @@
 package orochi.todo_.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -23,6 +20,8 @@ public class Todo {
 
     private Boolean completed;
 
-    private Integer ownerId;
-    
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }

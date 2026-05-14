@@ -29,8 +29,8 @@ public class User {
 
     private LocalDateTime createdAt;
 
-    @OneToMany
-    private List<Todo> todo;
+    @OneToMany(mappedBy = "user")
+    private List<Todo> todos;
 
     @PrePersist
     public void onCreated()
