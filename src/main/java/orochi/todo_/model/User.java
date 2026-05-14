@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer userId;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -27,6 +28,9 @@ public class User {
     private String password;
 
     private LocalDateTime createdAt;
+
+    @OneToMany
+    private List<Todo> todo;
 
     @PrePersist
     public void onCreated()
