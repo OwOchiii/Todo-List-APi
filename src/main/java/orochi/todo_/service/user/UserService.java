@@ -17,7 +17,7 @@ public class UserService {
         return userRepository.findUserByEmail(email) != null;
     }
 
-    private String createUser(String username, String email, String password){
+    public String createUser(String username, String email, String password){
         try {
             User user = new User();
             user.setUsername(username);
@@ -34,7 +34,7 @@ public class UserService {
 
     }
 
-    private String login(String username,String email,String password){
+    public String login(String username,String email,String password){
         try {
             User user = userRepository.findUserByEmail(email);
             if (user == null)
