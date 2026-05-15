@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import orochi.todo_.model.Todo;
 import orochi.todo_.repository.TodoRepository;
 import orochi.todo_.repository.UserRepository;
-import orochi.todo_.service.user.UserService;
 
 import java.util.List;
 
