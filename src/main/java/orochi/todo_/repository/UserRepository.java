@@ -6,4 +6,5 @@ import orochi.todo_.model.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
     User findUserByEmail(String email);
     User save(User user);
+    User getUserByUserId(Integer userId);
 }
