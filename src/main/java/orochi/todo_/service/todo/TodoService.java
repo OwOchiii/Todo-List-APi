@@ -47,7 +47,7 @@ public class TodoService {
         }
         catch (Exception e)
             {
-            return e.getMessage();
+            return "Error" + e.getMessage();
             }
     }
 
@@ -61,7 +61,24 @@ public class TodoService {
         }
         catch (Exception e)
         {
-            return e.getMessage();
+            return "Error" + e.getMessage();
+        }
+    }
+
+    public String updateTodo(String title, String description, Integer id) {
+        try{
+            Todo todo = new Todo();
+            if (todoRepository.getTodosById(id) == null)
+                throw new Exception("Todo not found");
+            todo = todoRepository.getTodosById(id);
+            todo.setTitle(title);
+            todo.setDescription(description);
+            todo.setCompleted(false);
+            todoRepository.save(todo);
+            return "Todo update successfully";
+        }
+        catch (Exception e){
+            return "Error" + e.getMessage();
         }
     }
 }
