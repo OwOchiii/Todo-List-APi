@@ -50,4 +50,18 @@ public class TodoService {
             return e.getMessage();
             }
     }
+
+    public String deleteTodo(Integer id) {
+        try
+        {
+            if (todoRepository.getTodosById(id) == null)
+                throw new Exception("Todo not found");
+            todoRepository.deleteById(id);
+            return "Todo deleted successfully";
+        }
+        catch (Exception e)
+        {
+            return e.getMessage();
+        }
+    }
 }
