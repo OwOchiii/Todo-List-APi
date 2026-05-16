@@ -117,3 +117,4 @@ For all the Todo endpoints below, you **MUST** include your JWT token in the HTT
 - `403 Forbidden`: Your user account might not have the correct permissions.
 - `500 Internal Server Error`: Usually means the database isn't connected or configured correctly. Check your `application.properties` and Postgres server.
 
+Project link: https://roadmap.sh/projects/todo-list-api
