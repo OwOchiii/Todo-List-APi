@@ -1,4 +1,4 @@
-package orochi.todo_.controller;
+package orochi.todo_.controller.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
